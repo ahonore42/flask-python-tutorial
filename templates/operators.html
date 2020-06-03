@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="/static/PythonLogo.png" alt="Python Logo" />
+        <h1>Operators</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/loops">Loops</a></li>
+                <li><a href="/operators">Operators</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    {% for op in operators %}
+    <div>
+        <h3>{{op.name}}</h3>
+        <p>{{op.description}}</p>
+        <p><strong>Symbol: </strong>{{op.symbol}}</p>
+        <p><strong>Example: </strong>{{op.example}}</p>
+        <p><strong>Uses</strong></p>
+        <p>{{op.uses}}</p>
+
+    </div>
+
+    {% endfor %}
+
+    <div>
+        <h3>Add a New Operator!</h3>
+        <form method="POST">
+            <input name="name" type="text" placeholder="Operator Name">
+            <input name="description" type="text" placeholder="Description">
+            <input name="symbol" type="text" placeholder="Operator Symbol">
+            <input name="example" type="text" placeholder="Provide an Example">
+            <input name="uses" type="text" placeholder="Describe when you would use this operator.">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
